@@ -472,6 +472,11 @@ function showResult() {
     resDiv.style.display = "block";
     currentQuestionId = "result";
 
+    // Track meaningful conversion event
+    if (window.va) {
+      window.va("event", { name: "Quiz Completed", score: totalScore });
+    }
+
     const t = translations[currentLang];
     let resultData;
     let scoreClass = "";
