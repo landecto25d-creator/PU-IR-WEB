@@ -1,0 +1,269 @@
+/* Bootstrap Handle Resets */
+:root {
+    color-scheme: light;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; 
+} */
+
+html, body {
+    /* padding-top: 30px; */
+    /* padding-bottom: 20px; */
+    width: 100%;
+    min-height: 100dvh; 
+    /* -webkit-text-size-adjust: 100%;  */
+    /* text-size-adjust: 100%; */
+    touch-action: manipulation; 
+}
+
+.main {
+    background: linear-gradient(120deg, #02050a 0%, #06142e 100%);
+    min-height: 100dvh; 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 20px;
+    padding-bottom: 60px; 
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    position: relative;
+    overflow-x: hidden;
+}
+
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
+    transition: all 0.4s ease;
+    overflow: hidden; 
+    cursor: pointer;
+    background: rgba(255,255,255,0.1); 
+    border-radius: 50%; 
+}
+
+.btn-back:hover {
+    transform: scale(1.1); 
+    background: rgba(255,255,255,0.2);
+}
+
+.question-container {
+    width: 100%;
+    /* max-width: 800px; */
+    margin-top: 100px; 
+    animation: fadeIn 0.5s ease-in-out;
+    padding-bottom: 40px; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.judul {
+    text-align: center;
+    font-size: clamp(32px, 5vw, 60px); 
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Custom container override or removal - using Bootstrap classes instead */
+/* .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px; 
+} */
+
+.textBox, .button {
+    width: 100%;
+    /* max-width: 550px; Moved to Bootstrap col sizes */
+    padding: 15px 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.05), 
+        rgba(255, 255, 255, 0.01)
+    );
+    backdrop-filter: blur(25px); 
+    -webkit-backdrop-filter: blur(25px); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left; 
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+
+
+.button {
+    margin-top: 0; 
+    text-align: center; 
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none;
+}
+
+/* Fix for anchor tag to not mess up flex layout if used */
+a {
+    text-decoration: none;
+    color: inherit;
+    /* width: 100%; 
+    display: flex;
+    justify-content: center; */
+}
+
+.boxTitle {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: hsl(0, 0%, 100%); 
+}
+
+@media (hover: hover) {
+    .button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.button:active {
+    transform: scale(0.98);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Manual media queries can be replaced by Bootstrap responsive utilities if needed, 
+   but keeping them for specific font-size adjustments is fine */
+@media (max-width: 768px) {
+    .main {
+        padding: 15px;
+    }
+    
+    .btn-back {
+        top: 15px;
+        left: 15px;
+        width: 44px; 
+        height: 44px;
+    }
+    
+    .judul {
+        margin-top: 20px;
+    }
+
+    .textBox, .button {
+        font-size: 15px; 
+        padding: 16px 20px;
+    }
+    
+    .boxTitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .judul {
+        font-size: 32px;
+    }
+    
+    .textBox, .button {
+        width: 100%; 
+        border-radius: 16px;
+    }
+}
+
+/* Progress Bar Styles */
+#progress-container {
+    position: absolute;
+    top: 43px; /* Align w/ center of 50px back button (20px top + 25px half-height - 2px half-bar) */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 140px); 
+    max-width: 600px;
+    z-index: 50;
+    margin: 0;
+}
+
+#progress-text {
+    margin-top: 8px; /* Standard spacing */
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #progress-container {
+        top: 35px; /* Align w/ center of 44px back button (15px top + 22px half-height - 2px half-bar) */
+        width: calc(100% - 110px); 
+    }
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Modal Animation Classes */
+#language-modal {
+    animation: fadeIn 0.4s ease-out;
+}
+
+#language-modal .textBox {
+    animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes popDown {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+#language-modal.closing {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+#language-modal.closing .textBox {
+    animation: popDown 0.3s ease-in forwards;
+}
+
+/* Landing Page Animation */
+.animate-pop {
+    animation: fadeIn 0.8s ease-out;
+}
