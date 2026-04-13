@@ -21,7 +21,7 @@ html, body {
 }
 
 .main {
-    background: linear-gradient(120deg, #02050a 0%, #06142e 100%);
+    background: rgb(205, 0, 203);
     min-height: 100dvh; 
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
