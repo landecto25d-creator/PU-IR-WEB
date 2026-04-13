@@ -21,7 +21,7 @@ html, body {
 }
 
 .main {
-    background: rgb(205, 0, 203);
+    background: #AF14AE;
     min-height: 100dvh; 
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
