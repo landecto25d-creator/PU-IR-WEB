@@ -487,14 +487,24 @@ function showResult() {
     // 5-7: Lumayan (Moderate)
     // 0-4: Kurang (Less)
 
+    let categoryKey = '';
     if (totalScore >= 12) {
       resultData = t.results.very_suitable;
+      categoryKey = 'very_suitable';
     } else if (totalScore >= 8) {
       resultData = t.results.suitable;
+      categoryKey = 'suitable';
     } else if (totalScore >= 5) {
       resultData = t.results.moderate;
+      categoryKey = 'moderate';
     } else {
       resultData = t.results.less_suitable;
+      categoryKey = 'less_suitable';
+    }
+
+    // Track result in Firebase Firestore
+    if (window.recordResultIR) {
+        window.recordResultIR(categoryKey);
     }
 
     const display = document.getElementById("score-display");
